@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
-import { Gallery } from './ImageGallery.styled';
-import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = () => {
-    return (
-        <Gallery>
-            <ImageGalleryItem/>
-        </Gallery>
-    )
+import styles from './imageGallery.module.scss';
+
+const ImageGallery = ({ children }) => {
+  return (
+    <>
+      <ul className={styles.imageGallery}>{children}</ul>
+    </>
+  );
 };
 
 export default ImageGallery;
 
-ImageGallery.propType = {
+ImageGallery.propTypes = {
+  children: PropTypes.element.isRequired,
 };
